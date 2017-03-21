@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,63 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-javascript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/21/javascript/" class="article-date">
+  <time datetime="2017-03-21T04:12:17.000Z" itemprop="datePublished">2017-03-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/21/javascript/">javascript</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-css怎么写-js就怎么写"><a href="#1-css怎么写-js就怎么写" class="headerlink" title="1.css怎么写 js就怎么写"></a>1.css怎么写 js就怎么写</h3><p>但是有个东西例外:<br>        class            className(不加style)<br>        margin-left        marginLeft(复合样式首字母大写)<br>        单引号里面写双引号<br>        双引号里面写单引号</p>
+<h3 id="2-函数声明和调用"><a href="#2-函数声明和调用" class="headerlink" title="2.函数声明和调用"></a>2.函数声明和调用</h3><pre><code>声明:function 函数名() {
+        //code
+    }
+    调用:函数名()
+</code></pre><p>!&lt;– more –&gt;</p>
+<h3 id="3-事件-任何标签都能加事件-操作谁给谁加事件"><a href="#3-事件-任何标签都能加事件-操作谁给谁加事件" class="headerlink" title="3.事件: 任何标签都能加事件 操作谁给谁加事件"></a>3.事件: 任何标签都能加事件 操作谁给谁加事件</h3><p>点击事件:onclick<br>鼠标移入:onmouseover<br>鼠标移出:onmouseout<br>鼠标按下:onmousedown<br>鼠标抬起:onmouseup<br>select下选中的<option>选项触发事件    onchange<br>当页面滚动时触发:onscroll<br>改变窗口大小事件:onresize<br>onfocus:事件，获取焦点的事件<br>onblur：事件，失去焦点的事件<br>双击事件:ondblclick<br>当键盘按下时触发:onkeydown<br>当键盘抬起时触发:onkeyup<br>当鼠标移动的时候:onmousemove<br>img.onload   当图片加载成功触发这个事件<br>img.onerror  当图片加载失败触发这个事件。<br>oncontextmenu  (鼠标右键事件)<br>onmouseenter：    进入了    解决onmosueover的bug<br>onmouseleave ： 离开了<br>onmouseout的bug</option></p>
+<h3 id="4-document-body能直接选中body"><a href="#4-document-body能直接选中body" class="headerlink" title="4.document.body能直接选中body"></a>4.document.body能直接选中body</h3><p>**5.if判断–流程控制语句<br>if（条件）{语句1}；                简写：条件&amp;&amp;语句1<br>if（条件）{语句1}else if（条件）{语句2};        简写：条件？语句1：语句2；（三目运算符）</p>
+<p>switch（条件）{<br>case 情况1：<br>语句<br>break；<br>case 情况2：<br>语句<br>break;<br>default：<br>语句<br>break；<br>}</p>
+<p>**break；        中断本次执行<br>for(var i=0;i&lt;10;i++){ if(i==3){ break; //中断本次循环}<br>                alert(i);    //0,1,2<br>}</p>
+<p>**continue；    跳过本次执行<br>for(var i=0;i&lt;10;i++){ if(i==3){ continue; //跳出本次循环}<br>                alert(i);//0,1,2,4,5,6,7,8,9<br>}<br>=  赋值   == 判断比较  === 全等 </p>
+<p>6.style 玩的都是行间</p>
+<p>**7.传参:<br>(一个参数)    声明:function 名字(参数){<br>                //code<br>                //参数<br>                }<br>            调用:名字(参数)</p>
+<p>(多个参数)    声明:function 名字(参数1,参数2){<br>                //code<br>                //参数1,参数2<br>                }<br>            调用:名字(参数1,参数2)</p>
+<h3 id="8-标示符和表达式"><a href="#8-标示符和表达式" class="headerlink" title="8.标示符和表达式:"></a>8.标示符和表达式:</h3><pre><code>.  标示符  . 只能操作已有属性
+[] 表达式     只要 . 能干的  [] 都能干
+</code></pre><h3 id="9-获取元素"><a href="#9-获取元素" class="headerlink" title="9.获取元素"></a>9.获取元素</h3><p>获取一组元素:<br>document.getElementsByTagName(‘标签’)<br>获取id<br>document.getElementById(‘id’)<br>通过class选取一组元素<br>document.getElementsByClassName(‘class’)</p>
+<h3 id="10-数组-Array"><a href="#10-数组-Array" class="headerlink" title="10.数组(Array):"></a>10.数组(Array):</h3><pre><code>var arr = [1,2,3,4,5]
+length:数组的个数   从1开始
+下标: 从0开始    arr[0]
+</code></pre><h3 id="11-谁触发-this就是谁"><a href="#11-谁触发-this就是谁" class="headerlink" title="11.谁触发 this就是谁"></a>11.谁触发 this就是谁</h3><p>注意:this：当前发生事件元素<br>定时器里面不能用this   this会变成window<br>解决方法:var _this=this;<br>====================================解决方法:ES6<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">aBtn[i].onclick=function () &#123;</div><div class="line">    //箭头函数  中的this固定化(this指向aBtn)</div><div class="line">   timer=setTimeout(()=&gt;&#123;</div><div class="line">       for(var i=0;i&lt;aBtn.length;i++)&#123;</div><div class="line">           aDiv[i].style.display=&apos;none&apos;;</div><div class="line">           aBtn[i].className=&apos;&apos;;</div><div class="line">       &#125;</div><div class="line">       this.className=&apos;active&apos;;</div><div class="line">       aDiv[this.index].style.display=&apos;block&apos;;</div><div class="line">   &#125;,300)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/21/javascript/" data-id="cj0j110bj000100uyee4cx164" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-juqery" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -89,7 +146,8 @@
 主版本号：大改动，很有可能和原来完全不一样
 </code></pre><h3 id="官网：http-jquery-com"><a href="#官网：http-jquery-com" class="headerlink" title="官网：http://jquery.com/"></a>官网：<a href="http://jquery.com/" target="_blank" rel="external">http://jquery.com/</a></h3><p>1.x    兼容性：亚非拉<br>2.x    兼容性：欧美<br>3.x    新版<br>js实现的东西，jquery不一定全部能实现<br>jquery能实现的东西，用js一定能实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">window.onloadc =&gt; $(function()&#123;  //....      &#125;);</div><div class="line">domReay =&gt; $(document).ready(function()&#123;&#125;);</div></pre></td></tr></table></figure></p>
 <p>$:   –  jquery 核心 </p>
-<h3 id="写任何jquery-相关的东西，都是要用到"><a href="#写任何jquery-相关的东西，都是要用到" class="headerlink" title="写任何jquery 相关的东西，都是要用到   $"></a>写任何jquery 相关的东西，都是要用到   $</h3><h3 id="获取元素："><a href="#获取元素：" class="headerlink" title="获取元素："></a>获取元素：</h3><pre><code>document.getElementById //  ByTagName
+<h3 id="写任何jquery-相关的东西，都是要用到"><a href="#写任何jquery-相关的东西，都是要用到" class="headerlink" title="写任何jquery 相关的东西，都是要用到   $"></a>写任何jquery 相关的东西，都是要用到   $</h3><p>!&lt;– more –&gt;</p>
+<h3 id="获取元素："><a href="#获取元素：" class="headerlink" title="获取元素："></a>获取元素：</h3><pre><code>document.getElementById //  ByTagName
     --$(&apos;input&apos;)
     就是css 中的写法
     jquery里获取元素： css 中怎么写  jquery 就怎么写
@@ -262,7 +320,7 @@ $.getJSON();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/20/juqery/" data-id="cj0j0vne40000xguy79vv2nko" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/20/juqery/" data-id="cj0j110be000000uy6l6hiryj" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -297,9 +355,13 @@ $.getJSON();
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/03/21/javascript/">javascript</a>
+          </li>
         
           <li>
             <a href="/2017/03/20/juqery/">juqery</a>
@@ -318,7 +380,7 @@ $.getJSON();
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
