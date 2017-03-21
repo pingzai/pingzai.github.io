@@ -87,13 +87,37 @@
 
 
 
+<meta name="description" content="12.循环:自增:
+    i=i+1;
+    i+=1;
+    i++;
+
+while(条件){
+    语句
+}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript2">
 <meta property="og:url" content="http://yoursite.com/2017/03/21/javascript2/index.html">
 <meta property="og:site_name" content="陆平的blog">
-<meta property="og:updated_time" content="2017-03-21T06:28:51.116Z">
+<meta property="og:description" content="12.循环:自增:
+    i=i+1;
+    i+=1;
+    i++;
+
+while(条件){
+    语句
+}">
+<meta property="og:updated_time" content="2017-03-21T06:41:04.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript2">
+<meta name="twitter:description" content="12.循环:自增:
+    i=i+1;
+    i+=1;
+    i++;
+
+while(条件){
+    语句
+}">
 
 
 
@@ -318,7 +342,115 @@
       
 
       
-        
+        <h3 id="12-循环"><a href="#12-循环" class="headerlink" title="12.循环:"></a>12.循环:</h3><pre><code>自增:
+    i=i+1;
+    i+=1;
+    i++;
+
+while(条件){
+    语句
+}
+</code></pre><a id="more"></a>
+<pre><code>for(初始值;条件;自增){
+    语句
+}
+</code></pre><h3 id="13-web分离-样式（css）-结构（html）-行为（js）"><a href="#13-web分离-样式（css）-结构（html）-行为（js）" class="headerlink" title="13.web分离  样式（css）  结构（html）  行为（js）"></a>13.web分离  样式（css）  结构（html）  行为（js）</h3><h3 id="14-操作表单元素"><a href="#14-操作表单元素" class="headerlink" title="14.操作表单元素:"></a>14.操作表单元素:</h3><pre><code>获取:元素.value
+设置:元素.value=&apos;值&apos;;
+</code></pre><h3 id="15-操作非表单元素"><a href="#15-操作非表单元素" class="headerlink" title="15.操作非表单元素:"></a>15.操作非表单元素:</h3><pre><code>获取:元素.innerHTML
+设置:元素.innerHTML=&apos;内容&apos;;  
+</code></pre><h3 id="16-字符串连接"><a href="#16-字符串连接" class="headerlink" title="16.字符串连接:"></a>16.字符串连接:</h3><pre><code>**字符串不能换行
+1.换行可以   加号 拼起来
+
+2. \  每换行尾部加
+
+3. ``引号 直接加    第一个ES6的语法(${加变量})
+</code></pre><p><code>asdasd</code> 模版字符串      ${变量}  占位符</p>
+<pre><code>()提高优先级   (this.index+1)
+
+
+秘诀:两个单引号    两个加号 里面放变量
+
+字符串和数字相加  会变成字符串  字符串不会运算 
+</code></pre><h3 id="17-字符串转成数字"><a href="#17-字符串转成数字" class="headerlink" title="17.字符串转成数字"></a>17.字符串转成数字</h3><pre><code>显式类型转换:   强制类型转换
+parseInt(字符串)          把字符串转变成整数
+        &apos;12.5px&apos;      12
+parseFloat(字符串)          把字符串转变成小数(浮点数)
+        &apos;12.5px&apos;      12.5
+Number(字符串)         把字符串转变成数字  比较严格。
+        &apos;12.5px&apos;          非数字是NaN（null空是数字）
+isNaN(x) 函数用于检查其参数是否是非数字值。
+如果 x 是特殊的非数字值 NaN（或者能被转换为这样的值）返回的值就是 true。
+如果 x 是其他值,则返回 false。     
+</code></pre><h3 id="18-str-charAt-下标-获取某一位置的字符（ie自带标签"><a href="#18-str-charAt-下标-获取某一位置的字符（ie自带标签" class="headerlink" title="18.str.charAt(下标) 获取某一位置的字符（ie自带标签)"></a>18.str.charAt(下标) 获取某一位置的字符（ie自带标签)</h3><h3 id="19-数据类型"><a href="#19-数据类型" class="headerlink" title="19.数据类型:"></a>19.数据类型:</h3><pre><code>基本数据类型(不可分)
+string               字符串 
+number                数字     
+boolean                 布尔值  
+undefined            未定义 
+object              对象(可分的)   object里面可以包数组也可以包对象
+function                函数 ?有争议        
+global   **        ES6  顶层对象
+</code></pre><h3 id="20-typeof-检测数据类型"><a href="#20-typeof-检测数据类型" class="headerlink" title="20.typeof  检测数据类型"></a>20.typeof  检测数据类型</h3><h3 id="21-undefined什么时候会出现？"><a href="#21-undefined什么时候会出现？" class="headerlink" title="21.undefined什么时候会出现？"></a>21.undefined什么时候会出现？</h3><pre><code>1.变量声明了，但是没有赋值。    
+2.访问一个不存在的属性。    
+3.当参数没有值。
+</code></pre><p> 4.函数里return没有返回值。</p>
+<p>###22.隐式转换:</p>
+<pre><code>-   *   /   % ==   &gt;&lt;        隐式转换，尽量别用。
+
+alert(&apos;10&apos;*2)   (&apos;10&apos;+2)    加号 做了字符串 拼接
+</code></pre><h3 id="23-作用域："><a href="#23-作用域：" class="headerlink" title="23.作用域："></a>23.作用域：</h3><pre><code>局部变量：只能在函数内部使用
+全局变量：在哪里都能使用
+闭包：子函数可以去使用父函数局部变量（如果函数内部的变量和全局同名，不会覆盖）
+</code></pre><h3 id="24-匈牙利命名法-前面有类型前缀后面跟单词首字母大写"><a href="#24-匈牙利命名法-前面有类型前缀后面跟单词首字母大写" class="headerlink" title="24.匈牙利命名法:前面有类型前缀后面跟单词首字母大写"></a>24.匈牙利命名法:前面有类型前缀后面跟单词首字母大写</h3><pre><code>**必须要遵守
+    o           object             oBtn                一个对象
+    a           array                aBtn                 多个东西
+   可以遵守
+    i           int                iNum         整数
+    s           string            sName         字符串
+    b           boolean            bOk                 布尔值
+</code></pre><h3 id="25-return：返回值"><a href="#25-return：返回值" class="headerlink" title="25.return：返回值"></a>25.return：返回值</h3><pre><code>1.可以返回任何东西
+2.阻断后面的代码执行    
+</code></pre><h3 id="26-什么是真-什么是假"><a href="#26-什么是真-什么是假" class="headerlink" title="26.什么是真 | 什么是假"></a>26.什么是真 | 什么是假</h3><pre><code>真：true        非空对象        非0对象        非空字符串
+假：false        0        &apos;&apos;    null        undefined    NaN
+</code></pre><h3 id="27-获取行间样式：obj-style-xxx"><a href="#27-获取行间样式：obj-style-xxx" class="headerlink" title="27.获取行间样式：obj.style.xxx"></a>27.获取行间样式：obj.style.xxx</h3><pre><code>获取非行间样式（生效的样式）
+IE（低级浏览器）    obj.currentStyle.样式
+
+IE9+ chrome FF（高级浏览器）    getComputedStyle(obj,false).样式
+
+if(obj.currentStyle){
+          obj.currentStyle.样式
+  }else{
+          getComputedStyle(obj,false).样式
+       }
+
+条件使用的原因    未定义的属性undefind    未定义的函数报错  
+</code></pre><h3 id="28-随机数"><a href="#28-随机数" class="headerlink" title="28.随机数"></a>28.随机数</h3><pre><code>Math.random()  0-1的随机数不包括
+封装随机数
+function rnd(m.n){
+     return    parseInt(Math.random()*(m-n))+n;
+}
+</code></pre><h3 id="29-eval-注入攻击"><a href="#29-eval-注入攻击" class="headerlink" title="29.eval:注入攻击"></a>29.eval:注入攻击</h3><pre><code>eval把字符串解析成js能理解的程序
+</code></pre><h3 id="30-运算符"><a href="#30-运算符" class="headerlink" title="30.运算符:"></a>30.运算符:</h3><pre><code>算术运算：+ - * /
+莫  %  取余 
+</code></pre><h3 id="31-赋值运算符"><a href="#31-赋值运算符" class="headerlink" title="31.赋值运算符"></a>31.赋值运算符</h3><pre><code>=    +=     -=    *=    /=    %=
+</code></pre><h3 id="32-比较运算符"><a href="#32-比较运算符" class="headerlink" title="32.比较运算符"></a>32.比较运算符</h3><pre><code>&gt;     &lt;     &gt;=    &lt;=
+==     != 
+===    全等
+!==     不全等
+=         赋值
+==             判断是否相等，只要值一样就ok
+===          判断是否全等，值要一样，类型也要一样。
+</code></pre><h3 id="33-逻辑运算符"><a href="#33-逻辑运算符" class="headerlink" title="33.逻辑运算符"></a>33.逻辑运算符</h3><pre><code>&amp;&amp;         与（并且）    两边的条件必须都满足才算真的。
+||         或（或者）    两边的条件满足一个就是真的。
+!         非（取反） 
+</code></pre><h3 id="34-arr-push-往数组最后面添加"><a href="#34-arr-push-往数组最后面添加" class="headerlink" title="34.arr.push  往数组最后面添加"></a>34.arr.push  往数组最后面添加</h3><h3 id="35-找数组里面的重复的"><a href="#35-找数组里面的重复的" class="headerlink" title="35.找数组里面的重复的"></a>35.找数组里面的重复的</h3><pre><code>function findInArray(arr,aa){
+     for(var i=0; i&lt;arr.length; i++){
+         if(arr[i]==aa){
+                return trun;
+              }
+          }
+                return false;
+     }
+</code></pre>
       
     </div>
 
@@ -409,8 +541,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -454,6 +595,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#12-循环"><span class="nav-number">1.</span> <span class="nav-text">12.循环:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-web分离-样式（css）-结构（html）-行为（js）"><span class="nav-number">2.</span> <span class="nav-text">13.web分离  样式（css）  结构（html）  行为（js）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-操作表单元素"><span class="nav-number">3.</span> <span class="nav-text">14.操作表单元素:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-操作非表单元素"><span class="nav-number">4.</span> <span class="nav-text">15.操作非表单元素:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-字符串连接"><span class="nav-number">5.</span> <span class="nav-text">16.字符串连接:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-字符串转成数字"><span class="nav-number">6.</span> <span class="nav-text">17.字符串转成数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-str-charAt-下标-获取某一位置的字符（ie自带标签"><span class="nav-number">7.</span> <span class="nav-text">18.str.charAt(下标) 获取某一位置的字符（ie自带标签)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-数据类型"><span class="nav-number">8.</span> <span class="nav-text">19.数据类型:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-typeof-检测数据类型"><span class="nav-number">9.</span> <span class="nav-text">20.typeof  检测数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-undefined什么时候会出现？"><span class="nav-number">10.</span> <span class="nav-text">21.undefined什么时候会出现？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-作用域："><span class="nav-number">11.</span> <span class="nav-text">23.作用域：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-匈牙利命名法-前面有类型前缀后面跟单词首字母大写"><span class="nav-number">12.</span> <span class="nav-text">24.匈牙利命名法:前面有类型前缀后面跟单词首字母大写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-return：返回值"><span class="nav-number">13.</span> <span class="nav-text">25.return：返回值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26-什么是真-什么是假"><span class="nav-number">14.</span> <span class="nav-text">26.什么是真 | 什么是假</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#27-获取行间样式：obj-style-xxx"><span class="nav-number">15.</span> <span class="nav-text">27.获取行间样式：obj.style.xxx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-随机数"><span class="nav-number">16.</span> <span class="nav-text">28.随机数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#29-eval-注入攻击"><span class="nav-number">17.</span> <span class="nav-text">29.eval:注入攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#30-运算符"><span class="nav-number">18.</span> <span class="nav-text">30.运算符:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-赋值运算符"><span class="nav-number">19.</span> <span class="nav-text">31.赋值运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-比较运算符"><span class="nav-number">20.</span> <span class="nav-text">32.比较运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#33-逻辑运算符"><span class="nav-number">21.</span> <span class="nav-text">33.逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#34-arr-push-往数组最后面添加"><span class="nav-number">22.</span> <span class="nav-text">34.arr.push  往数组最后面添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#35-找数组里面的重复的"><span class="nav-number">23.</span> <span class="nav-text">35.找数组里面的重复的</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
