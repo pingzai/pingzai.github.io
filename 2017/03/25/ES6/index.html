@@ -1,0 +1,780 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="ES6：ES6 不是什么新语言，也不是新框架，它就是原生 JS，
+只不过是升过级的JS的一些写法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6">
+<meta property="og:url" content="http://yoursite.com/2017/03/25/ES6/index.html">
+<meta property="og:site_name" content="陆平的blog">
+<meta property="og:description" content="ES6：ES6 不是什么新语言，也不是新框架，它就是原生 JS，
+只不过是升过级的JS的一些写法。">
+<meta property="og:updated_time" content="2017-03-25T10:26:41.153Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6">
+<meta name="twitter:description" content="ES6：ES6 不是什么新语言，也不是新框架，它就是原生 JS，
+只不过是升过级的JS的一些写法。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/25/ES6/"/>
+
+
+
+
+
+  <title> ES6 | 陆平的blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">陆平的blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/25/ES6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陆平">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陆平的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ES6
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-25T18:25:13+08:00">
+                2017-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="ES6："><a href="#ES6：" class="headerlink" title="ES6："></a>ES6：</h1><pre><code>ES6 不是什么新语言，也不是新框架，它就是原生 JS，
+只不过是升过级的JS的一些写法。
+</code></pre><a id="more"></a>
+<p>###1.let：定义变量<br>        特点：<br>            1）支持块作用域<br>            2）不允许在相同作用域重复定义<br>        块作用域：<br>            {}      let<br>            以前： 函数作用域</p>
+<h3 id="2-const-定义常量"><a href="#2-const-定义常量" class="headerlink" title="2.const: 定义常量"></a>2.const: 定义常量</h3><pre><code>常量： 一经定义，以后不可以再改变
+正是因为这个特性，要求常量在定义时，必须赋初始值，否则以后就没机会了。
+通常：约定，常量的名字全用大写字母
+const PI = 3.14159265;
+</code></pre><h3 id="3-字符串"><a href="#3-字符串" class="headerlink" title="3.字符串"></a>3.字符串</h3><pre><code>let str = ``;  //反单引号
+使用``来定义字符串的话，就可以用字符串模板： ${变量}
+</code></pre><h3 id="4-解构赋值"><a href="#4-解构赋值" class="headerlink" title="4.解构赋值"></a>4.解构赋值</h3><pre><code>//写法1： √
+    var a = 10;
+    var b = 12;
+    var c = 20;
+//写法2： √
+var a=10,b=12,c=20;
+概念：赋值等号 左边的结构和右边一模一样。
+[a,b,c] = [10,12,20]; //a = 10,b=12,c=20        
+[a,[b,e],c] = [100,[200,300],400];
+[a,{f,g},d]=[12,{90,98},4]  ×
+[a,{f,g},d]=[12,{f:90,g:98},4]   √
+let [a,{f,g},d]=[12,{f=90,g=98},4];   ×
+如果在解构赋值时，碰到json格式，那么右边必须是一个合法的json
+并且，json中的每一项名字是一一对应的，和顺序无关
+应用1：
+    用于函数的json参数初始化
+    function sum({a=0,b=0} = {}){
+        a++;
+        b++;
+        return a+b;
+    }
+</code></pre><h3 id="5-不定参数、扩展参数-…"><a href="#5-不定参数、扩展参数-…" class="headerlink" title="5.不定参数、扩展参数  …"></a>5.不定参数、扩展参数  …</h3><pre><code>原来：arguments
+现在： ...
+...args  是一个真正的数组。
+
+例1：代替arguments
+    function sum(...args)
+例2：扩展参数的作用
+    function sum(a,b,...agrs){
+        //args   除了a和b之外，其它参数的一个数组
+    }
+    ****...args  必须放在所有参数的最后
+例3：复制数组
+    1）循环每一项来复制
+    2）var arr2 = [...arr1];  不是引用
+    3）Array.from(arr1)  //不兼容IE  不是引用
+</code></pre><h3 id="6-for-of-循环"><a href="#6-for-of-循环" class="headerlink" title="6.for - of 循环"></a>6.for - of 循环</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">for</div><div class="line">while</div><div class="line">for...in</div><div class="line">for(var name of 要循环的东西)&#123;</div><div class="line">	</div><div class="line">&#125;</div><div class="line">要循环的东西，可以是数组，但是不能是json</div><div class="line">for-of循环，  不能用于循环json</div></pre></td></tr></table></figure>
+<h3 id="7、数据格式-map"><a href="#7、数据格式-map" class="headerlink" title="7、数据格式   map"></a>7、数据格式   map</h3><pre><code>    数据格式：
+        1）普通变量  var a = 12;
+        2）数组     var arr = [11,22];
+        3）JSON   var json = {name:1,age:2};
+        4）map
+    map: 和json非常像 的一种新的数据格式(键/值 对) 
+    1） 怎么弄一个map出来
+            map 是js中的一个对象 
+        var map = new Map();
+    2） 增加内容
+        map.set(&apos;key&apos;,&apos;value&apos;);
+            例：  
+                var map = new Map();
+                map.set(&apos;name&apos;,&apos;小红&apos;);
+                map.set(&apos;age&apos;,18);
+    3）获取内容    
+        map.get(&apos;key&apos;);
+        例：  
+            //建一个新对象
+            var map = new Map();
+            //设置值
+            map.set(&apos;name&apos;,&apos;小红&apos;);
+            map.set(&apos;age&apos;,18);
+            //获取值
+            map.get(&apos;name&apos;); -- 小红
+    4）删除一项
+        map.delete(&apos;key&apos;);
+用for-of循环，来循环map
+    1） 普通循环
+        for(var item of map){
+            item -&gt; 数组 
+                item[0]是map中的key
+                item[1] -&gt; map中的value
+        }
+    2）利用解构赋值的形式
+        for(var [key,value] of map ){
+              alert(key);
+              alert(value);
+        }
+    3）循环map 的 entries()
+    for(let item of map.entries())
+
+    *默认情况下就是循环的entries，也就是说，如果不写entries()，结果是一样的
+
+    4）只想循环map中的key
+        for(var item of map.keys() )
+         只想循环map中的value
+        for(var item of map.values())
+    for-of循环数组 ：  entries()   keys()  values()
+        entries():
+        item -&gt;  [索引,值]
+        keys():
+        item -&gt;  索引
+
+    values():  
+        item -&gt;  值
+循环map对象时：
+    map.entries()
+    map
+    以上两种写法是一个效果，得到的都是map对象的每一个item，包括key和value，是一个数组形式
+循环数组：
+    arr.entries()
+    得到的是数组中每一项：  [索引值,值]
+    arr.values()  ——  报错，不支持
+arr.keys() —— 得到的就是数组的索引值
+</code></pre><h3 id="8-函数"><a href="#8-函数" class="headerlink" title="8.函数"></a>8.函数</h3><pre><code>原来：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function show()&#123;...&#125;</div><div class="line">var show = new Function();</div><div class="line">show(); </div><div class="line">show(a);</div><div class="line">show(a,b);</div></pre></td></tr></table></figure>
+<pre><code>现在：
+    箭头函数：  =&gt;
+    省略了function，加了一个箭头=&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">1:</div><div class="line">	function show()&#123;</div><div class="line">		alert(1);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	let show = () =&gt; &#123;</div><div class="line">		alert(1);</div><div class="line">	&#125;;</div><div class="line">2:</div><div class="line">	function show(a)&#123;alert(a);&#125;</div><div class="line">	</div><div class="line">	let show = (a)=&gt;&#123;</div><div class="line">		alert(a);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<pre><code>  箭头函数，只是在函数定义时，写法有区别，在调用的时候，和原来一样。
+
+
+*箭头函数里的this，固定化 自己没有去外边找  最大this是window
+*箭头函数里arguments不能用了
+*当参数正好有一个的时候，( ) 可以省略
+*当函数里面只有一句话，而且正好是return的时候，{ }和里面的return 可以省略
+</code></pre><h3 id="9-JSON-有了简写形式"><a href="#9-JSON-有了简写形式" class="headerlink" title="9.JSON 有了简写形式"></a>9.JSON 有了简写形式</h3><pre><code>当json中的name和变量名一模一样时，可以简写为以下形式：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">	var a = 12;</div><div class="line">	var b = 18;</div><div class="line">var json = &#123;a:a,b:2&#125;;</div><div class="line">	json.a -&gt; 12</div><div class="line">	json.b -&gt; 18</div><div class="line">	var a = 12;</div><div class="line">	var b = 18;</div><div class="line">var json = &#123;a,b&#125;;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/21/HTML-CSS/" rel="next" title="HTML/CSS">
+                <i class="fa fa-chevron-left"></i> HTML/CSS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="陆平" />
+          <p class="site-author-name" itemprop="name">陆平</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6："><span class="nav-number">1.</span> <span class="nav-text">ES6：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-const-定义常量"><span class="nav-number">1.0.1.</span> <span class="nav-text">2.const: 定义常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-字符串"><span class="nav-number">1.0.2.</span> <span class="nav-text">3.字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-解构赋值"><span class="nav-number">1.0.3.</span> <span class="nav-text">4.解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-不定参数、扩展参数-…"><span class="nav-number">1.0.4.</span> <span class="nav-text">5.不定参数、扩展参数  …</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-for-of-循环"><span class="nav-number">1.0.5.</span> <span class="nav-text">6.for - of 循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、数据格式-map"><span class="nav-number">1.0.6.</span> <span class="nav-text">7、数据格式   map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-函数"><span class="nav-number">1.0.7.</span> <span class="nav-text">8.函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-JSON-有了简写形式"><span class="nav-number">1.0.8.</span> <span class="nav-text">9.JSON 有了简写形式</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陆平</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
