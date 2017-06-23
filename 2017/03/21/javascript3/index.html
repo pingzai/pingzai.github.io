@@ -1,0 +1,845 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="36.封装补0123function todou(n)&amp;#123;   return n&amp;lt;10?	&amp;apos;0&amp;apos;+n : &amp;apos;&amp;apos;+n;&amp;#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript3">
+<meta property="og:url" content="http://yoursite.com/2017/03/21/javascript3/index.html">
+<meta property="og:site_name" content="陆平的blog">
+<meta property="og:description" content="36.封装补0123function todou(n)&amp;#123;   return n&amp;lt;10?	&amp;apos;0&amp;apos;+n : &amp;apos;&amp;apos;+n;&amp;#125;">
+<meta property="og:updated_time" content="2017-03-21T06:53:50.695Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript3">
+<meta name="twitter:description" content="36.封装补0123function todou(n)&amp;#123;   return n&amp;lt;10?	&amp;apos;0&amp;apos;+n : &amp;apos;&amp;apos;+n;&amp;#125;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/21/javascript3/"/>
+
+
+
+
+
+  <title> javascript3 | 陆平的blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">陆平的blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/21/javascript3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陆平">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陆平的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                javascript3
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-21T14:43:13+08:00">
+                2017-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="36-封装补0"><a href="#36-封装补0" class="headerlink" title="36.封装补0"></a>36.封装补0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function todou(n)&#123;</div><div class="line">   return n&lt;10?	&apos;0&apos;+n : &apos;&apos;+n;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="37-定时器："><a href="#37-定时器：" class="headerlink" title="37.定时器："></a>37.定时器：</h3><pre><code>setInterval(函数,时间)
+setInterval(function(){JS代码},时间)l
+ 时间：毫秒    1000    1s
+
+setTimeout(函数名字，时间)   只执行一次
+clearTimeout(函数名字) 
+
+***只要用定时器 一定要先关 再开
+</code></pre><h3 id="38-日期对象-里面装着日期时间"><a href="#38-日期对象-里面装着日期时间" class="headerlink" title="38.日期对象  里面装着日期时间"></a>38.日期对象  里面装着日期时间</h3><pre><code>var oDate = new Date()    获取当前时间
+获取年  oDate.getFullYear();
+获取月 oDate.getMonth();      比当前月小1，需要+1  是0开始
+获取天 oDate.getDate();
+   获取星期 oDate.getDay();       星期日是0       也是从0开始
+</code></pre><hr>
+<p>   日 一 二 三 四 五 六</p>
+<pre><code>0 1  2  3  4  5  6
+</code></pre><hr>
+<pre><code>获取小时  oDate.getHours();
+获取分钟  oDate.getMinutes();
+获取秒数  oDate.getSeconds();
+</code></pre><h3 id="39-时间戳"><a href="#39-时间戳" class="headerlink" title="39.时间戳"></a>39.时间戳</h3><pre><code>var oDate=new Date();
+oDate.getTime(); 时间戳
+</code></pre><p>格林威治时间戳</p>
+<h2 id="从1970年1月1日0点0分0秒0毫秒一直到现在所经历过的毫秒数"><a href="#从1970年1月1日0点0分0秒0毫秒一直到现在所经历过的毫秒数" class="headerlink" title="从1970年1月1日0点0分0秒0毫秒一直到现在所经历过的毫秒数"></a>从1970年1月1日0点0分0秒0毫秒一直到现在所经历过的毫秒数</h2><p>获取到目标日期的时间戳(先设置，在获取)<br>日期对象设置<br>var oDate = new Date();<br>设置年月日        oDate.setFullYear(年，月，日)；    比现实月小1，设置的时候月份要+1</p>
+<h2 id="设置时分秒毫秒-oDate-setHours-小时，分钟，秒，毫秒-；"><a href="#设置时分秒毫秒-oDate-setHours-小时，分钟，秒，毫秒-；" class="headerlink" title="设置时分秒毫秒    oDate.setHours(小时，分钟，秒，毫秒)；"></a>设置时分秒毫秒    oDate.setHours(小时，分钟，秒，毫秒)；</h2><pre><code>获取到当前的时间戳
+    时间差=目标时间戳-当前时间戳
+时间差(ms)
+     时间差(s) = parseInt(时间差/1000);
+
+1天86400秒    1小时3600秒    1分钟60秒
+</code></pre><h3 id="40-设置时间"><a href="#40-设置时间" class="headerlink" title="40. 设置时间:"></a>40. 设置时间:</h3><pre><code>setFullYear(0,0,0);
+setHours(0,0,0);  
+getMonth()+1;
+如果时间大于正常时间  会进位
+月:0-11
+</code></pre><h4 id="41-封闭空间"><a href="#41-封闭空间" class="headerlink" title="41. 封闭空间:"></a>41. 封闭空间:</h4><pre><code>(function(){})()   也叫自执行函数
+ 1.全局变量 污染环境
+ 2.(function(){
+        //code 里面的变量 和函数名 不和外面冲突
+  })()   
+ 3.解决了变量名 冲突
+ 4.解决i值不可用
+</code></pre><h4 id="42-arguments-实参–（实际传过来的参数）"><a href="#42-arguments-实参–（实际传过来的参数）" class="headerlink" title="42.arguments:实参–（实际传过来的参数）"></a>42.arguments:实参–（实际传过来的参数）</h4><pre><code>形参-- (每个参数相对应 传过来的参数)
+ length
+ []
+ 只能用这两个方法
+当参数个数不固定时使用。
+伪数组、类数组 只能用数组的下标 其他的方法都不能用 
+</code></pre><h3 id="43-i值得问题"><a href="#43-i值得问题" class="headerlink" title="43.i值得问题"></a>43.i值得问题</h3><pre><code>1.循环里面有定时器    定时器里的i值是最后的值
+for（var i=0； i&lt;3; i++){
+     //alert（i）    o,1,2
+    setInterval(function(){
+        alert（i）;    i会无限弹3
+     },0)
+}
+解决办法：封闭空间
+
+2.循环里面加事件    事件里面的i    不好用
+解决办法：自定义属性
+</code></pre><h3 id="44-字符串常用方法-函数"><a href="#44-字符串常用方法-函数" class="headerlink" title="44.字符串常用方法(函数)"></a>44.字符串常用方法(函数)</h3><pre><code>**str.charAt(下标)获取某一位置的字符
+
+**str.indexOf(字符串)从前往后找，字符串第一次出现的位置.                                                             
+    如果找到了，返回位置，如果没找到，返回-1.
+
+**str.lastIndexOf(字符串)从后往前找，字符串第一次出现的位置.
+    如果找到了，返回位置， 如果没找到，返回-1.
+
+UA:获取浏览器的信息 window.navigator.userAgent
+
+**str.substring  截取字符串
+    substring(开始位置，结束位置(不包括结束位置));
+    substring(开始位置); 从开始截取到最后
+
+    str.toLowerCase()  把字符串转成小写
+    str.toUpperCase()  把字符串转成大写
+
+    str.split(&apos;特定的字符&apos;); 把字符串通过特定字符分割成数组
+</code></pre><h3 id="45-字符串比较"><a href="#45-字符串比较" class="headerlink" title="45.字符串比较"></a>45.字符串比较</h3><pre><code>字符串大小写字母
+字典序:小写 大写  数字
+字符串字母  字典序排序
+字符串数字  字典序排序    
+字符串中文  乱来(编码)
+</code></pre><h3 id="46-数组"><a href="#46-数组" class="headerlink" title="46.数组"></a>46.数组</h3><pre><code>数组：arr.length   个数
+     arr.[]           下标
+
+如何内弄出来一个数组？
+    a.var  arr=[1,2,3,4];
+    b.var  arr=new Array(1,2,3,4);
+
+小问题：
+    var arr=[3]； 
+var arr=new Array(3)    arr.length    3
+    ****不一样
+var arr=Array.of(3);        **ES6新语法
+小方法：
+    添加：
+    arr.push() 在后面添加一个
+    arr.unshift() 在前面添加一个
+ 删除：
+    arr.pop()  在后面删除一个
+    arr.shift()  在前面删除一个
+
+      删除      有返回值  返回的是被删掉的东西
+
+万能的操作:
+     arr.splice() 会改变原数组 有返回值
+a. 删除
+     arr.splice(开始的位置,删除的个数) 
+b.插入
+     arr.splice(开始的位置,0,要插入的东西1,要插入的东西2,要插入的东西3) 
+c. 替换
+     arr.splice(开始的位置,删除个数,要替换的东西)
+
+数组转字符串：
+     arr.join(&apos;特殊的字符&apos;)  通过特殊的字符把数组拼接成字符串
+     有返回值  不改变原数组
+
+数组连接：
+    arr.concat()     arr.concat(arr1,arr2)
+
+数组反转：
+    arr.reverse() 
+
+数组排序：
+    arr.sort() 
+
+不能排数字，数字的排序，也会变成字符串的排序
+拿两个东西给人家。人家排序，告诉你结果
+
+从小到大:
+arr.sort(function(n1,n2){
+     return n1-n2;
+});
+从大到小
+arr.sort(function(n1,n2){
+    return n2-n1;
+});
+
+数组，里面理论上可以存任何东西
+        但是：建议，以后数组里面最好只存储一个类型值
+
+数组的length可以赋值
+        arr.length=10
+
+快速清空一个数组：
+    a.arr.length=0;
+    b.arr=[];
+    c.arr.splice(0,arr.length);
+    d.while(arr.length){
+        arr.pop();
+      }
+</code></pre><h3 id="47-JSON"><a href="#47-JSON" class="headerlink" title="47.JSON"></a>47.JSON</h3><pre><code>json:(给变量打了一个包)
+ {a:12,b:5,c:6}   ***json 键值对
+加引号是标准写法。
+ {&apos;name&apos;:value,&apos;name&apos;:value}
+主要用来装东西、传输数据
+**跟后台交互时，json必须用标准格式。
+            数组       json
+下标        数字       字符串
+length       有         没有
+循环         for/while       for...in
+
+循环
+    for...in... json专用
+    for(var i in json){
+         //i  下标
+        //json[i] 值
+     }
+
+添加：
+ json.a=12;   键不能重名
+删除：
+ delete json.a
+</code></pre><h3 id="48-Math的常用方法-本地对象"><a href="#48-Math的常用方法-本地对象" class="headerlink" title="48.Math的常用方法(本地对象)"></a>48.Math的常用方法(本地对象)</h3><pre><code>Math.random()  获取0-1之间的随机小数不包括1
+Math.ceil() 向上取整
+Math.floor() 向下取整
+Math.round()  四舍五入
+
+Math.abs()  绝对值
+Math.sqrt()  开方
+Math.pow()  n次方(幂)
+Math.max()  求最大值
+Math.min()  求最小值
+</code></pre><p>###49.eval:把字符串变成可执行的语句<br>        在解析json字符串的时候，要两边加()括号<br>        后台过来的json  都是字符串<br>             eval(‘(‘+json+’)’)</p>
+<pre><code>****另一种方法:var fn=new Function(&apos;return&apos;+json);
+
+         fn();    **ES6新语法
+</code></pre><hr>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/21/javascript2/" rel="next" title="javascript2">
+                <i class="fa fa-chevron-left"></i> javascript2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/21/javascript4/" rel="prev" title="javascript4">
+                javascript4 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="陆平" />
+          <p class="site-author-name" itemprop="name">陆平</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#36-封装补0"><span class="nav-number">1.</span> <span class="nav-text">36.封装补0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#37-定时器："><span class="nav-number">2.</span> <span class="nav-text">37.定时器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#38-日期对象-里面装着日期时间"><span class="nav-number">3.</span> <span class="nav-text">38.日期对象  里面装着日期时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#39-时间戳"><span class="nav-number">4.</span> <span class="nav-text">39.时间戳</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从1970年1月1日0点0分0秒0毫秒一直到现在所经历过的毫秒数"><span class="nav-number"></span> <span class="nav-text">从1970年1月1日0点0分0秒0毫秒一直到现在所经历过的毫秒数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置时分秒毫秒-oDate-setHours-小时，分钟，秒，毫秒-；"><span class="nav-number"></span> <span class="nav-text">设置时分秒毫秒    oDate.setHours(小时，分钟，秒，毫秒)；</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#40-设置时间"><span class="nav-number">1.</span> <span class="nav-text">40. 设置时间:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#41-封闭空间"><span class="nav-number">1.1.</span> <span class="nav-text">41. 封闭空间:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#42-arguments-实参–（实际传过来的参数）"><span class="nav-number">1.2.</span> <span class="nav-text">42.arguments:实参–（实际传过来的参数）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-i值得问题"><span class="nav-number">2.</span> <span class="nav-text">43.i值得问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#44-字符串常用方法-函数"><span class="nav-number">3.</span> <span class="nav-text">44.字符串常用方法(函数)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#45-字符串比较"><span class="nav-number">4.</span> <span class="nav-text">45.字符串比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#46-数组"><span class="nav-number">5.</span> <span class="nav-text">46.数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#47-JSON"><span class="nav-number">6.</span> <span class="nav-text">47.JSON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#48-Math的常用方法-本地对象"><span class="nav-number">7.</span> <span class="nav-text">48.Math的常用方法(本地对象)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陆平</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
